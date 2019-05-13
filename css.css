@@ -1,0 +1,9 @@
+.btn-primary:disabled {
+    color: #fff;
+    background-color: darkmagenta;
+    border-color: black;
+}
+
+body {
+        font-family: monospace;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css.css" media="screen" />
+    <title>Programacion Avanzada - TA-TE-TI</title>
+    <script src="juego.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body onload="desabilitar()">
+    <div class="container">
+
+        <div class="header">
+            <h1 class="font-weight-bold">TA-TE-TI</h1>
+        </div>
+        <!-- <button type="button" class="btn btn-primary" onclick="comenzarJuego()">comenzar</button> -->
+        <div class="p-3 mb-2 estiloPropio text-white">.bg-success</div>
+        <div class="row">
+
+            <div class="col-sm-6">
+                <table>
+                    <tr>
+                        <td>
+                            <button id=0 type="button" class="btn btn-primary" style="width: 100px; height: 100px" onclick="movimiento (0)"></button>
+                        </td>
+                        <td>
+                            <button id=1 type="button" class="btn btn-primary" style="width: 100px; height: 100px" onclick="movimiento (1)"></button>
+                        </td>
+                        <td>
+                            <button id=2 type="button" class="btn btn-primary" style="width: 100px; height: 100px" onclick="movimiento (2)"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id=3 type="button" class="btn btn-primary" style="width: 100px; height: 100px" onclick="movimiento (3)"></button>
+                        </td>
+                        <td>
+                            <button id=4 type="button" class="btn btn-primary" style="width: 100px; height: 100px" onclick="movimiento (4)"></button>
+                        </td>
+                        <td>
+                            <button id=5 type="button" class="btn btn-primary" style="width: 100px; height: 100px" onclick="movimiento (5)"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id=6 type="button" class="btn btn-primary" style="width: 100px; height: 100px" onclick="movimiento (6)"></button>
+                        </td>
+                        <td>
+                            <button id=7 type="button" class="btn btn-primary" style="width: 100px; height: 100px" onclick="movimiento (7)"></button>
+                        </td>
+                        <td>
+                            <button id=8 type="button" class="btn btn-primary" style="width: 100px; height: 100px" onclick="movimiento (8)"></button>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">COMENZAR</h5>
+
+                        <input id="nombre1" type="text" class="form-control" placeholder="Jugador 1">
+
+                        <input id="nombre2" type="text" class="form-control" placeholder="Jugador 2">
+                        <input id="boton1" type="submit" onclick="comenzarJuego()" value="Comenzar">
+                        <input id="boton2" type="submit" onclick="mandarGanador()" value="Comenzar de Nuevo">
+                        <!-- <a href="#" class="btn btn-primary m-2" onclick="comenzarJuego()">Comenzar</a> -->
+                        <div class="m-2">
+                            <p id="turno" class="font-weight-bold"></p>
+                            <p id="gana1" class="font-weight-bold"></p>
+                            <p id="gana2" class="font-weight-bold"></p>
+
+                            <Form name="envia1" id="envia1" action="/tateti/1" method="POST">
+
+                                <input type="hidden" name="user1" id="user1">
+                            </Form>
+                            <Form name="envia2" id="envia2" action="/tateti/2" method="POST">
+                                <input type="hidden" name="user2" id="user2">
+                            </Form>
+                        </div>
+                        <div class="m-2">
+                            <a href="/ganadores.html">Ver ganadores</a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</html>
